@@ -12,6 +12,11 @@ namespace RSL.CodeChallenge.Services
         {
             try
             {
+                if (string.IsNullOrEmpty(baseUrl))
+                {
+                    return null;
+                }
+
                 var client = new RestClient(baseUrl);
                 if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
                 {

@@ -4,11 +4,11 @@ namespace RSL.CodeChallenge.Models
 {
     public class LastestResultsView
     {
-        public List<LatestResultsResponse> Results { get; set; }
+        public List<DrawResult> Results { get; set; }
 
         public LastestResultsView()
         {
-            Results = new List<LatestResultsResponse>();
+            Results = new List<DrawResult>();
         }
     }
 }

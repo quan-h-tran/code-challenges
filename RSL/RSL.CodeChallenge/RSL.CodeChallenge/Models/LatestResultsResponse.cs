@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RSL.CodeChallenge.Models
 {
@@ -29,11 +30,12 @@ namespace RSL.CodeChallenge.Models
 
         public int DrawNumber { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DrawDate { get; set; }
 
-        public string Displayname { get; set; }
+        public string DrawDisplayName { get; set; }
 
-        public string LogoUrl { get; set; }
+        public string DrawLogoUrl { get; set; }
 
         public List<int> PrimaryNumbers { get; set; }
 
@@ -50,12 +52,14 @@ namespace RSL.CodeChallenge.Models
 
         public int BlocNumberOfWinners { get; set; }
 
-        public decimal DocDivident { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public decimal BlocDividend { get; set; }
 
         public string CompanyId { get; set; }
 
         public int CompanyNumberOfWinners { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal CompanyDividend { get; set; }
 
         public string PoolTransferType { get; set; }

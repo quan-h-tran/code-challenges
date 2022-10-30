@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using static RSL.CodeChallenge.Constants;
 
 namespace RSL.CodeChallenge.Models
 {
-    public class LatestResultsRequest
+    public class LottoResultsRequest
     {
-        public LotteriesProduct CompanyId { get; set; }
+        public string CompanyId { get; set; }
 
         public int MaxDarwCountPerProduct { get; set; }
 

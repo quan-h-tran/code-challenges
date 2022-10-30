@@ -171,7 +171,7 @@
     </Compile>
     <Compile Include="Models\LastestResultsView.cs" />
     <Compile Include="Models\LatestResultsResponse.cs" />
-    <Compile Include="Models\LatestResultsRequest.cs" />
+    <Compile Include="Models\LottoResultsRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\IApiService.cs" />

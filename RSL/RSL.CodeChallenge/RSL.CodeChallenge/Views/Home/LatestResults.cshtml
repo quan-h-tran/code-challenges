@@ -5,28 +5,38 @@
 </div>
 
 <div class="row">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Product Display Name</th>
-                <th scope="col">Logo</th>
-                <th scope="col">Draw Date</th>
-                <th scope="col">Draw Number</th>
-                <th scope="col">Jackpack Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var result in Model.Results)
-            {
-
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
                 <tr>
-                    <th scope="row">A</th>
-                    <td>B</td>
-                    <td>C</td>
-                    <td>D</td>
-                    <td>E</td>
+                    <th scope="col"><h4>Product Display Name</h4></th>
+                    <th scope="col"><h4>Draw Date</h4></th>
+                    <th scope="col"><h4>Draw Number</h4></th>
+                    <th scope="col"><h4>Jackpot Value</h4></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @if (!Model.Results.Any())
+                {
+                    <tr>
+                        <th colspan="4" class="text-center">No Result</th>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var result in Model.Results)
+                    {
+                        var jackpot = result.Dividends.SingleOrDefault(d => d.Division == 1);
+
+                        <tr>
+                            <th scope="row">@Html.DisplayFor(x => result.DrawDisplayName)</th>
+                            <td>@Html.DisplayFor(x => result.DrawDate)</td>
+                            <td>@Html.DisplayFor(x => result.DrawNumber)</td>
+                            <td>@Html.DisplayFor(x => jackpot.BlocDividend)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

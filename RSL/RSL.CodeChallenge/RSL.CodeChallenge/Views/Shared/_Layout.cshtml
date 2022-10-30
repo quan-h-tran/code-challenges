@@ -7,17 +7,23 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Manrope" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-center">
                 <div class="col-8 text-center">
-                    <h1 class="text-dark" title="Lottey Draw and Jackpot Information">Lottey Draw <br/> and <br/> Jackpot Information</h1>
+                    <h1 class="text-dark" title="Lottey Draw and Jackpot Information">Lottey Draw <br /> and <br /> Jackpot Information</h1>
                 </div>
             </div>
         </header>
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-start">
+                @Html.ActionLink("Home", "Index", new { controller = "Home" }, new { @class = "p-2 link-secondary" })
+                @Html.ActionLink("Latest Results", "LatestResults", new { controller = "Home" }, new { @class = "p-2 link-secondary" })
+            </nav>
+        </div>
     </div>
     <main class="container">
         @RenderBody()

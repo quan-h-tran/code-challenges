@@ -2,6 +2,8 @@
 {
     public static class Constants
     {
+        public static int MaxDarwCountPerProduct = 20;
+
         public enum DataType
         {
             Json,
