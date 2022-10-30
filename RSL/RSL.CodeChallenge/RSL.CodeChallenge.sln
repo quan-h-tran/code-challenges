@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSL.CodeChallenge", "RSL.CodeChallenge\RSL.CodeChallenge.csproj", "{947A3CBB-47B8-4F60-BBC7-8EB1D4B570F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSL.CodeChallenge.Tests", "RSL.CodeChallenge.Tests\RSL.CodeChallenge.Tests.csproj", "{1A69C892-1A0F-4474-8D2E-5B0156FB5DE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{947A3CBB-47B8-4F60-BBC7-8EB1D4B570F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947A3CBB-47B8-4F60-BBC7-8EB1D4B570F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947A3CBB-47B8-4F60-BBC7-8EB1D4B570F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A69C892-1A0F-4474-8D2E-5B0156FB5DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A69C892-1A0F-4474-8D2E-5B0156FB5DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A69C892-1A0F-4474-8D2E-5B0156FB5DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A69C892-1A0F-4474-8D2E-5B0156FB5DE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

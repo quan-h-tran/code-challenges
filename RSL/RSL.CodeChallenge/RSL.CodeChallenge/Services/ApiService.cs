@@ -49,7 +49,7 @@ namespace RSL.CodeChallenge.Services
             }
             catch (Exception ex)
             {
-                // TODO: logo exception
+                // TODO: log exception
                 return null;
             }
         }
