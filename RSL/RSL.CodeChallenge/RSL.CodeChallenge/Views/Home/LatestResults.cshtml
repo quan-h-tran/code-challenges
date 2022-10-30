@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                @if (!Model.Results.Any())
+                @if (Model == null || !Model.Results.Any())
                 {
                     <tr>
                         <th colspan="4" class="text-center">No Result</th>

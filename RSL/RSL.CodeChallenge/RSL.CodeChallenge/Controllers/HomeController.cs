@@ -31,7 +31,7 @@ namespace RSL.CodeChallenge.Controllers
         public ActionResult LatestResults()
         {
             ViewBag.Title = "The Lott Lastest Result";
-            var results = new LastestResultsView();
+            LastestResultsView results = null;
 
             var request = new LottoResultsRequest
             {
@@ -43,7 +43,10 @@ namespace RSL.CodeChallenge.Controllers
             var latestResults = _apiService.Post<LatestResultsResponse>(_theLottBaseApiEndpoint, "latestresults", request);
             if (latestResults != null && latestResults.DrawResults.Any())
             {
-                results.Results.AddRange(latestResults.DrawResults);
+                results = new LastestResultsView
+                {
+                    Results = latestResults.DrawResults
+                };
             }
 
             return View("LatestResults", results);
