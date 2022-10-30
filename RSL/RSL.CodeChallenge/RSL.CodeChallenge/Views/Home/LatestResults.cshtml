@@ -1,0 +1,32 @@
+﻿@model RSL.CodeChallenge.Models.LastestResultsView
+
+<div class="row">
+    <h2 class="mt-5 mb-5">Lastest Results</h2>
+</div>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Product Display Name</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Draw Date</th>
+                <th scope="col">Draw Number</th>
+                <th scope="col">Jackpack Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in Model.Results)
+            {
+
+                <tr>
+                    <th scope="row">A</th>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

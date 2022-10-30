@@ -1,30 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using RSL.CodeChallenge.Models;
+using RSL.CodeChallenge.Services;
 using System.Web.Mvc;
+using static RSL.CodeChallenge.Constants;
 
 namespace RSL.CodeChallenge.Controllers
 {
     public class HomeController : Controller
     {
+        private IApiService _apiService;
+
+        public HomeController(IApiService apiService)
+        {
+            _apiService = apiService;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult LatestResults()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Title = "The Lott Lastest Result";
+            var results = new LastestResultsView();
 
-            return View();
-        }
+            var request = new LatestResultsRequest
+            {
+                CompanyId = LotteriesProduct.Powerball,
+                MaxDarwCountPerProduct = 3
+            };
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            var latestResults = _apiService.Post<LatestResultsResponse>("https://data.api.thelott.com/sales/vmax/web", "data/lotto/latestresults", request);
+            if (latestResults != null)
+            {
+                results.Results.Add(latestResults);
+            }
 
-            return View();
+            return View("LatestResults", results);
         }
     }
 }
